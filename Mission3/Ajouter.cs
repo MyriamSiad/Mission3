@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Contexts;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -44,6 +46,7 @@ namespace Mission3
     public partial class lblAdresse : Form
     {
         private Gsb2023Entities1 mesDonnesGSB;
+
         public lblAdresse(Gsb2023Entities1 mesDonnesGSB)
         {
 
@@ -109,19 +112,46 @@ namespace Mission3
 
             }
 
-            foreach (var m in requeteMedicament.Distinct().ToList())
-            {
-                cbxMedicament.Items.Add(m.id);
-            }
-
-            for (int i = 1; i <= 5; i++)
-            {
-                cbxQuantite.Items.Add(i);
-            }
 
         }
 
-    
+        private void DataGridViewMedicament()
+        {
+            var requete = mesDonnesGSB.medicaments
+                          .Select(m => new
+                          {
+                              idMedicament = m.id
+                          }).Distinct().ToList();
+
+            dtgMedicament.Columns.Clear();
+            dtgMedicament.Columns.Add("IdMedicament", "ID Médicament");
+
+            dtgMedicament.Columns.Add("Quantite", "Quantité");
+            foreach (var item in requete)
+            {
+                dtgMedicament.Rows.Add(item.idMedicament);
+            }
+        }
+
+
+        private bool DataGridViewMedicamentQuantite(int idRapport)
+        {
+            bool flag = false;
+            for (int i = 0; i < dtgMedicament.Rows.Count; i++)
+            {
+                int Quantite = Convert.ToInt32((dtgMedicament.Rows[i].Cells[1].Value));
+                if (Quantite > 0)
+                {
+                    string idMedicament = dtgMedicament.Rows[i].Cells[0].Value.ToString();
+                    newOffrir(idRapport, Quantite, idMedicament);
+
+                    flag = true;
+                }
+
+            }
+
+            return flag;
+        }
         /*
 
         private void NombreDeMedicamentOffert (int nbr)
@@ -166,7 +196,7 @@ namespace Mission3
         {
             bool flag = false;
             var requete = mesDonnesGSB.rapports
-                           .Where(r => r.idVisiteur == idVisiteur && r.idMedecin == IdMedecin && r.date == date.Date )
+                           .Where(r => r.idVisiteur == idVisiteur && r.idMedecin == IdMedecin && r.date == date.Date)
                            .Select(r => r.id).ToList();
             if (requete.Count > 0)
             {
@@ -230,30 +260,32 @@ namespace Mission3
             newRapport.bilan = cbxBilan.Text;
             newRapport.motif = cbxMotif.Text;
 
-            
+
             if (cmbId.Visible == false)
             {
                 newRapport.idMedecin = getIdMedecin(nomMedecin, prenomMedecin);
-                
+
             }
             else
             {
                 newRapport.idMedecin = Convert.ToInt32(cmbId.Text);
             }
-            
+
             return newRapport;
         }
 
-        private offrir newOffrir(int Idrapport)
+        private offrir newOffrir(int Idrapport, int quantite, string idMedicament)
         {
             offrir NewOffrirs = new offrir();
 
-            NewOffrirs.quantite = Convert.ToInt32(cbxQuantite.SelectedItem);
-            NewOffrirs.idMedicament = cbxMedicament.SelectedItem.ToString();
-          
- 
+            NewOffrirs.quantite = quantite;
+            NewOffrirs.idMedicament = idMedicament;
+
+
 
             NewOffrirs.idRapport = Idrapport;
+
+            mesDonnesGSB.offrirs.Add(NewOffrirs);
 
             return NewOffrirs;
 
@@ -261,7 +293,7 @@ namespace Mission3
 
         private void Ajouter_Load(object sender, EventArgs e)
         {
-
+            DataGridViewMedicament();
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -275,52 +307,49 @@ namespace Mission3
                 string idVisiteur = newRapport().idVisiteur;
                 int IdMedecin = newRapport().idMedecin;
                 DateTime date = newRapport().date.Value;
-                if (cbxMedicament.SelectedItem != null)
+                var idRapport = newRapport().id;
+
+
+
+
+
+
+                if (!VerificationDoublonsRapports(idVisiteur, IdMedecin, date))
                 {
-                    var idRapport = newRapport().id;
-                    var offrir = newOffrir(idRapport);
-                    Debug.WriteLine($"Offrir : IdRapport={offrir.idRapport}, IdMedicament={offrir.idMedicament}, Quantite={offrir.quantite}");
-                    this.mesDonnesGSB.offrirs.Add(newOffrir(idRapport));
-                }
-                if(!VerificationDoublonsRapports(idVisiteur,IdMedecin, date))
-                {
+                    DataGridViewMedicamentQuantite(idRapport);
+
+                   
+                   
                     this.mesDonnesGSB.SaveChanges();
+
                     MessageBox.Show("Enregistrement Validé");
                 }
                 else
                 {
+
+                    mesDonnesGSB.Dispose();
+                    mesDonnesGSB = new Gsb2023Entities1();
                     MessageBox.Show("Il existe déjà un rapport avec ces mêmes informations ! ");
                 }
+            }
+
+
+            catch (DbUpdateException ex)
+            {
                 
-               
-            }
-
-            catch (DbUpdateException dbEx)
-            {
-                foreach (var entity in mesDonnesGSB.ChangeTracker.Entries())
-                {
-                    Debug.WriteLine($"{entity.Entity.GetType().Name} - {entity.State}");
-                }
-                MessageBox.Show($"{newRapport().id}");
-                MessageBox.Show($"Erreur lors de l'enregistrement : {dbEx.Message}\nDétails : {dbEx.InnerException?.Message}",
-            "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                MessageBox.Show($"Erreur : {ex.Message}\nDétails : {ex.InnerException?.Message}");
             }
         }
 
-        private void cbxMedicament_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-            if (cbxMedicament.SelectedItem != null)
-            {
-                cbxQuantite.Enabled = true; // Active le ComboBox Quantité
-            }
-            else
-            {
-                cbxQuantite.Enabled = false; // Désactive le ComboBox Quantité si aucun élément n'est sélectionné
-            }
 
-        }
+
+
+
+
+           
+     
 
         private void cbxQuantite_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -434,24 +463,6 @@ namespace Mission3
 
         }
 
-
-        private void btnValiderMedicament_Click(object sender, EventArgs e)
-        {
-            /*
-            if (nbrMedicament.Value != 0)
-            {
-                int nombreMedicament = (int)nbrMedicament.Value;
-                btnValiderMedicament.Visible = false;
-                nbrMedicament.Visible = false;
-                lblNbrMedicamament.Visible = false;
-
-
-                //FlowLayoutMedicament.Visible = true;
-                NombreDeMedicamentOffert(nombreMedicament);
-
-            }
-            */
-        }
 
 
 

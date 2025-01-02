@@ -57,9 +57,8 @@ namespace Mission3
         {
             txtId.Visible = true;
             label1.Visible = true;
-            grpOffert.Visible = true;
-            CmbxMedicament.Enabled = false;
-            CmbxQuantite.Enabled = false;
+           dtgMedicament.Visible = true;
+            dtgMedicament.Rows[0].Cells["idMedicament"].ReadOnly = true;
             lbldate.Visible = true;
             btnEnregistrer.Visible = true;
             label7.Visible = true;
@@ -89,17 +88,7 @@ namespace Mission3
         }
 
 
-        private void LoadComboBoxMedicament()
-        {
-            var medicament = mesDonneesGSB.medicaments.Select(m => m.id).ToList();
-            CmbxMedicament.DataSource = medicament;
-
-            for (int i = 0; i < 5; i++)
-            {
-                CmbxQuantite.Items.Add(i);
-            }
-
-        }
+        
 
         private bool ShowReport(string visiteurId, DateTime date)
         {
@@ -138,13 +127,41 @@ namespace Mission3
             lbldate.DataBindings.Add("Text", rapportBindingSource, "Rapport.date");
 
             // Si des médicaments sont offerts, lier les données correspondantes
-            CmbxMedicament.DataBindings.Clear();
-            CmbxQuantite.DataBindings.Clear();
-            CmbxMedicament.DataBindings.Add("Text", rapportBindingSource, "Offres.idMedicament");
-            CmbxQuantite.DataBindings.Add("Text", rapportBindingSource, "Offres.quantite");
+            dtgMedicament.DataSource = null;
+            dtgMedicament.Rows.Clear();
+
+            // Préparez une source de données pour les médicaments
+            var medicamentBindingSource = new BindingSource();
+            medicamentBindingSource.DataSource = rapportBindingSource;
+            medicamentBindingSource.DataMember = "Offres"; // Lien entre rapport et ses offres
+
+            dtgMedicament.DataSource = medicamentBindingSource;
+
+            // Configuration des colonnes du DataGridView
+           
+            dtgMedicament.AutoGenerateColumns = false;
+            dtgMedicament.Columns.Clear();
+
+            dtgMedicament.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Médicament",
+                DataPropertyName = "idMedicament",
+                Name = "idMedicament"
+            });
+
+            dtgMedicament.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Quantité",
+                DataPropertyName = "quantite",
+                Name = "quantite"
+            });
+
             
+
+
             if (rapports.Count > 0)
             {
+                
                 flag = true;
             }
 
@@ -155,13 +172,77 @@ namespace Mission3
            
         }
 
+        private offrir newOffrir(int Idrapport, int quantite, string idMedicament)
+        {
+            offrir NewOffrirs = new offrir();
+
+            NewOffrirs.quantite = quantite;
+            NewOffrirs.idMedicament = idMedicament;
 
 
+
+            NewOffrirs.idRapport = Idrapport;
+
+            mesDonneesGSB.offrirs.Add(NewOffrirs);
+
+            return NewOffrirs;
+
+        }
+        private void DataGridViewMedicament(int idRapport)
+        {
+            var requete = mesDonneesGSB.offrirs
+                          .Select(m => new
+                          {
+                              idMedicament = m.idMedicament,
+                              quantite = m.quantite,
+                              
+                          }).Distinct().ToList();
+
+
+            dtgMedicament.Columns.Clear();
+            dtgMedicament.Columns.Add("IdMedicament", "ID Médicament");
+
+            dtgMedicament.Columns.Add("Quantite", "Quantité");
+            foreach (var item in requete)
+            {
+                dtgMedicament.Rows.Add(item.idMedicament);
+                dtgMedicament.Rows.Add((int)item.quantite);
+            }
+        }
+
+
+        private bool DataGridViewMedicamentQuantite(int idRapport)
+        {
+            var requete = mesDonneesGSB.medicaments
+                          .Select(m => new
+                          {
+                              idMedicament = m.id
+                              
+                          }).Distinct().ToList();
+           
+            bool flag = false;
+
+            for (int i = 0; i < dtgMedicament.Rows.Count; i++)
+            {
+                int Quantite = Convert.ToInt32((dtgMedicament.Rows[i].Cells[1].Value));
+                if (Quantite > 0)
+                {
+                    string idMedicament = dtgMedicament.Rows[i].Cells[0].Value.ToString();
+                    newOffrir(idRapport, Quantite, idMedicament);
+
+                    flag = true;
+                }
+
+            }
+
+            return flag;
+        }
 
         private void Modifiercs_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();
-            LoadComboBoxMedicament();
+          
+    
         }
 
 
@@ -325,14 +406,20 @@ namespace Mission3
                     }
                     this.Update();
 
-                  MessageBox.Show("Le rapport a été supprimé avec succès.");
+                  
                 }
+                MessageBox.Show("Le rapport a été supprimé avec succès.");
 
-        }
+            }
             
             
 
            
+
+        }
+
+        private void dtgMedicament_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

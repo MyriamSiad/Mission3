@@ -58,18 +58,14 @@
             this.cbxMotif = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxBilan = new System.Windows.Forms.ComboBox();
-            this.CmbxMedicament = new System.Windows.Forms.ComboBox();
-            this.CmbxQuantite = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.grpOffert = new System.Windows.Forms.GroupBox();
             this.grpBoxDate = new System.Windows.Forms.GroupBox();
+            this.dtgMedicament = new System.Windows.Forms.DataGridView();
             this.BdgSourceOffrir = new System.Windows.Forms.BindingSource(this.components);
             this.grbxVisiteurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BdgNavRapport)).BeginInit();
             this.BdgNavRapport.SuspendLayout();
-            this.grpOffert.SuspendLayout();
             this.grpBoxDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdgSourceOffrir)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,7 +273,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 133);
+            this.label1.Location = new System.Drawing.Point(81, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 35;
@@ -286,7 +282,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(154, 130);
+            this.txtId.Location = new System.Drawing.Point(154, 110);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
@@ -295,7 +291,7 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(360, 465);
+            this.btnEnregistrer.Location = new System.Drawing.Point(364, 300);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(75, 23);
             this.btnEnregistrer.TabIndex = 38;
@@ -307,7 +303,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 335);
+            this.label7.Location = new System.Drawing.Point(342, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 39;
@@ -317,7 +313,7 @@
             // cbxMotif
             // 
             this.cbxMotif.FormattingEnabled = true;
-            this.cbxMotif.Location = new System.Drawing.Point(121, 332);
+            this.cbxMotif.Location = new System.Drawing.Point(382, 236);
             this.cbxMotif.Name = "cbxMotif";
             this.cbxMotif.Size = new System.Drawing.Size(150, 21);
             this.cbxMotif.TabIndex = 40;
@@ -326,7 +322,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(415, 355);
+            this.label4.Location = new System.Drawing.Point(342, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 41;
@@ -336,64 +332,16 @@
             // cbxBilan
             // 
             this.cbxBilan.FormattingEnabled = true;
-            this.cbxBilan.Location = new System.Drawing.Point(492, 347);
+            this.cbxBilan.Location = new System.Drawing.Point(382, 182);
             this.cbxBilan.Name = "cbxBilan";
             this.cbxBilan.Size = new System.Drawing.Size(150, 21);
             this.cbxBilan.TabIndex = 42;
             this.cbxBilan.Visible = false;
             // 
-            // CmbxMedicament
-            // 
-            this.CmbxMedicament.FormattingEnabled = true;
-            this.CmbxMedicament.Location = new System.Drawing.Point(97, 30);
-            this.CmbxMedicament.Name = "CmbxMedicament";
-            this.CmbxMedicament.Size = new System.Drawing.Size(121, 21);
-            this.CmbxMedicament.TabIndex = 0;
-            // 
-            // CmbxQuantite
-            // 
-            this.CmbxQuantite.FormattingEnabled = true;
-            this.CmbxQuantite.Location = new System.Drawing.Point(97, 66);
-            this.CmbxQuantite.Name = "CmbxQuantite";
-            this.CmbxQuantite.Size = new System.Drawing.Size(121, 21);
-            this.CmbxQuantite.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Medicament ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Quantité ";
-            // 
-            // grpOffert
-            // 
-            this.grpOffert.Controls.Add(this.label5);
-            this.grpOffert.Controls.Add(this.label8);
-            this.grpOffert.Controls.Add(this.CmbxQuantite);
-            this.grpOffert.Controls.Add(this.CmbxMedicament);
-            this.grpOffert.Location = new System.Drawing.Point(69, 175);
-            this.grpOffert.Name = "grpOffert";
-            this.grpOffert.Size = new System.Drawing.Size(252, 123);
-            this.grpOffert.TabIndex = 32;
-            this.grpOffert.TabStop = false;
-            this.grpOffert.Text = "Medicament offert ";
-            this.grpOffert.Visible = false;
-            // 
             // grpBoxDate
             // 
             this.grpBoxDate.Controls.Add(this.lbldate);
-            this.grpBoxDate.Location = new System.Drawing.Point(438, 161);
+            this.grpBoxDate.Location = new System.Drawing.Point(553, 147);
             this.grpBoxDate.Name = "grpBoxDate";
             this.grpBoxDate.Size = new System.Drawing.Size(189, 96);
             this.grpBoxDate.TabIndex = 43;
@@ -401,6 +349,16 @@
             this.grpBoxDate.Text = "Date";
             this.grpBoxDate.Visible = false;
             this.grpBoxDate.Enter += new System.EventHandler(this.grpBoxDate_Enter);
+            // 
+            // dtgMedicament
+            // 
+            this.dtgMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicament.Location = new System.Drawing.Point(61, 147);
+            this.dtgMedicament.Name = "dtgMedicament";
+            this.dtgMedicament.Size = new System.Drawing.Size(260, 150);
+            this.dtgMedicament.TabIndex = 44;
+            this.dtgMedicament.Visible = false;
+            this.dtgMedicament.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgMedicament_CellContentClick);
             // 
             // BdgSourceOffrir
             // 
@@ -411,6 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 544);
+            this.Controls.Add(this.dtgMedicament);
             this.Controls.Add(this.grpBoxDate);
             this.Controls.Add(this.cbxBilan);
             this.Controls.Add(this.label4);
@@ -419,7 +378,6 @@
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.grpOffert);
             this.Controls.Add(this.BdgNavRapport);
             this.Controls.Add(this.grbxVisiteurs);
             this.Controls.Add(this.button2);
@@ -433,10 +391,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.BdgNavRapport)).EndInit();
             this.BdgNavRapport.ResumeLayout(false);
             this.BdgNavRapport.PerformLayout();
-            this.grpOffert.ResumeLayout(false);
-            this.grpOffert.PerformLayout();
             this.grpBoxDate.ResumeLayout(false);
             this.grpBoxDate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdgSourceOffrir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -473,11 +430,7 @@
         private System.Windows.Forms.ComboBox cbxMotif;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxBilan;
-        private System.Windows.Forms.ComboBox CmbxMedicament;
-        private System.Windows.Forms.ComboBox CmbxQuantite;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox grpOffert;
         private System.Windows.Forms.GroupBox grpBoxDate;
+        private System.Windows.Forms.DataGridView dtgMedicament;
     }
 }

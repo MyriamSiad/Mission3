@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpOffert = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbxQuantite = new System.Windows.Forms.ComboBox();
-            this.cbxMedicament = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,66 +50,12 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.cbxMotif = new System.Windows.Forms.ComboBox();
             this.cbxBilan = new System.Windows.Forms.ComboBox();
-            this.FlowLayoutMedicament = new System.Windows.Forms.FlowLayoutPanel();
+            this.dtgMedicament = new System.Windows.Forms.DataGridView();
             this.lblNbrMedicamament = new System.Windows.Forms.Label();
-            this.nbrMedicament = new System.Windows.Forms.NumericUpDown();
-            this.btnValiderMedicament = new System.Windows.Forms.Button();
-            this.grpOffert.SuspendLayout();
             this.grbMedecin.SuspendLayout();
             this.grbxVisiteurs.SuspendLayout();
-            this.FlowLayoutMedicament.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbrMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grpOffert
-            // 
-            this.grpOffert.Controls.Add(this.label2);
-            this.grpOffert.Controls.Add(this.label1);
-            this.grpOffert.Controls.Add(this.cbxQuantite);
-            this.grpOffert.Controls.Add(this.cbxMedicament);
-            this.grpOffert.Location = new System.Drawing.Point(3, 3);
-            this.grpOffert.Name = "grpOffert";
-            this.grpOffert.Size = new System.Drawing.Size(267, 138);
-            this.grpOffert.TabIndex = 0;
-            this.grpOffert.TabStop = false;
-            this.grpOffert.Text = "Medicament offert ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Quantité ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Medicament ";
-            // 
-            // cbxQuantite
-            // 
-            this.cbxQuantite.Enabled = false;
-            this.cbxQuantite.FormattingEnabled = true;
-            this.cbxQuantite.Location = new System.Drawing.Point(97, 66);
-            this.cbxQuantite.Name = "cbxQuantite";
-            this.cbxQuantite.Size = new System.Drawing.Size(121, 21);
-            this.cbxQuantite.TabIndex = 1;
-            this.cbxQuantite.SelectedIndexChanged += new System.EventHandler(this.cbxQuantite_SelectedIndexChanged);
-            // 
-            // cbxMedicament
-            // 
-            this.cbxMedicament.FormattingEnabled = true;
-            this.cbxMedicament.Location = new System.Drawing.Point(97, 30);
-            this.cbxMedicament.Name = "cbxMedicament";
-            this.cbxMedicament.Size = new System.Drawing.Size(121, 21);
-            this.cbxMedicament.TabIndex = 0;
-            this.cbxMedicament.SelectedIndexChanged += new System.EventHandler(this.cbxMedicament_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -313,51 +254,31 @@
             this.cbxBilan.Size = new System.Drawing.Size(150, 21);
             this.cbxBilan.TabIndex = 25;
             // 
-            // FlowLayoutMedicament
+            // dtgMedicament
             // 
-            this.FlowLayoutMedicament.Controls.Add(this.grpOffert);
-            this.FlowLayoutMedicament.Location = new System.Drawing.Point(15, 18);
-            this.FlowLayoutMedicament.Name = "FlowLayoutMedicament";
-            this.FlowLayoutMedicament.Size = new System.Drawing.Size(282, 149);
-            this.FlowLayoutMedicament.TabIndex = 27;
-            this.FlowLayoutMedicament.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            this.dtgMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicament.Location = new System.Drawing.Point(44, 30);
+            this.dtgMedicament.Name = "dtgMedicament";
+            this.dtgMedicament.Size = new System.Drawing.Size(260, 150);
+            this.dtgMedicament.TabIndex = 32;
             // 
             // lblNbrMedicamament
             // 
             this.lblNbrMedicamament.AutoSize = true;
-            this.lblNbrMedicamament.Location = new System.Drawing.Point(351, 81);
+            this.lblNbrMedicamament.Location = new System.Drawing.Point(41, 9);
             this.lblNbrMedicamament.Name = "lblNbrMedicamament";
             this.lblNbrMedicamament.Size = new System.Drawing.Size(192, 13);
             this.lblNbrMedicamament.TabIndex = 29;
             this.lblNbrMedicamament.Text = "Nombre de medicament offert différents";
             this.lblNbrMedicamament.Click += new System.EventHandler(this.lblNbrMedicamament_Click);
             // 
-            // nbrMedicament
-            // 
-            this.nbrMedicament.Location = new System.Drawing.Point(456, 106);
-            this.nbrMedicament.Name = "nbrMedicament";
-            this.nbrMedicament.Size = new System.Drawing.Size(120, 20);
-            this.nbrMedicament.TabIndex = 30;
-            // 
-            // btnValiderMedicament
-            // 
-            this.btnValiderMedicament.Location = new System.Drawing.Point(611, 106);
-            this.btnValiderMedicament.Name = "btnValiderMedicament";
-            this.btnValiderMedicament.Size = new System.Drawing.Size(75, 23);
-            this.btnValiderMedicament.TabIndex = 31;
-            this.btnValiderMedicament.Text = "Valider";
-            this.btnValiderMedicament.UseVisualStyleBackColor = true;
-            this.btnValiderMedicament.Click += new System.EventHandler(this.btnValiderMedicament_Click);
-            // 
             // lblAdresse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 490);
-            this.Controls.Add(this.btnValiderMedicament);
-            this.Controls.Add(this.nbrMedicament);
+            this.Controls.Add(this.dtgMedicament);
             this.Controls.Add(this.lblNbrMedicamament);
-            this.Controls.Add(this.FlowLayoutMedicament);
             this.Controls.Add(this.cbxBilan);
             this.Controls.Add(this.cbxMotif);
             this.Controls.Add(this.lblMessage);
@@ -374,26 +295,17 @@
             this.Name = "lblAdresse";
             this.Text = "Ajouter";
             this.Load += new System.EventHandler(this.Ajouter_Load);
-            this.grpOffert.ResumeLayout(false);
-            this.grpOffert.PerformLayout();
             this.grbMedecin.ResumeLayout(false);
             this.grbMedecin.PerformLayout();
             this.grbxVisiteurs.ResumeLayout(false);
             this.grbxVisiteurs.PerformLayout();
-            this.FlowLayoutMedicament.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nbrMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grpOffert;
-        private System.Windows.Forms.ComboBox cbxMedicament;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxQuantite;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -416,9 +328,7 @@
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ComboBox cbxMotif;
         private System.Windows.Forms.ComboBox cbxBilan;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayoutMedicament;
+        private System.Windows.Forms.DataGridView dtgMedicament;
         private System.Windows.Forms.Label lblNbrMedicamament;
-        private System.Windows.Forms.NumericUpDown nbrMedicament;
-        private System.Windows.Forms.Button btnValiderMedicament;
     }
 }

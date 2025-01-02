@@ -35,6 +35,18 @@ namespace Mission3
             public int IdMedecin { get; set; }
             public string Motif { get; set; }
             public string Bilan { get; set; }
+
+            public string idMedicament { get; set; }
+            public int quantite { get; set; } 
+            
+            public string Famille { get; set; }
+            public string nomMedecin {get; set; }
+
+            public string prenomMedecin { get; set; }
+
+            public string nomVisiteur { get; set; }
+            public string prenomVisiteur { get; set; }
+            public string nomCommercial { get; set; }
         }
 
 
@@ -107,19 +119,42 @@ namespace Mission3
 
         private List<RapportDTO> ShowRapports(string idVisiteur, DateTime date)
         {
-            var rapportsSelectifs = mesDonneesGSB.rapports
-                .Where(r => r.idVisiteur == idVisiteur && r.date == date)
-                .Select(r => new RapportDTO
-                {
-                    Id = r.id,
-                    Date = r.date.Value,
-                    IdVisiteur = r.idVisiteur,
-                    IdMedecin = r.idMedecin,
-                    Motif = r.motif,
-                    Bilan = r.bilan
-                }).ToList();
+            var rapportsSelectifs =
+            (from rapport in mesDonneesGSB.rapports
+             join offrir in mesDonneesGSB.offrirs on rapport.id equals offrir.idRapport
+             join medicament in mesDonneesGSB.medicaments on offrir.idMedicament equals medicament.id
+             join medecin in mesDonneesGSB.medecins on rapport.idMedecin equals medecin.id
+             join visiteur in mesDonneesGSB.visiteurs on rapport.idVisiteur equals visiteur.id
 
-            return rapportsSelectifs;
+             where rapport.idVisiteur == idVisiteur && rapport.date == date
+             select new RapportDTO
+             {
+                 Id = rapport.id,
+                 Date = rapport.date.Value,
+                 IdVisiteur = rapport.idVisiteur,
+                 IdMedecin = rapport.idMedecin,
+                 Motif = rapport.motif,
+                 Bilan = rapport.bilan,
+                 quantite = (int)offrir.quantite,
+                 idMedicament = medicament.id,
+                 Famille = medicament.idFamille,
+                 nomCommercial = medicament.nomCommercial,
+                 nomMedecin = medecin.nom,
+                 prenomMedecin = medecin.prenom,
+                 prenomVisiteur = visiteur.prenom,
+                 nomVisiteur = visiteur.nom,
+                 
+
+
+
+             }).ToList();
+
+                return rapportsSelectifs;
+      
+
+
+         
+
         }
 
         private void GenererFichierJSON(List<RapportDTO> rapports)
@@ -156,19 +191,7 @@ namespace Mission3
         }
 
 
-    /*    private List<rapport> ConvertirRapports(List<rapport> rapports)
-        {
-            return rapports.Select(r => new rapport
-            {
-                id = r.id,
-                idVisiteur = r.idVisiteur,
-                date = r.date,
-                motif = r.motif,
-                bilan = r.bilan,
-                idMedecin = r.idMedecin,
-                
-            }).ToList();
-        }*/
+  
         private void btnGenererXml_Click(object sender, EventArgs e)
         {
             string prenom = cbxVisiteursPrenom.Text.ToString();
