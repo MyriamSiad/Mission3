@@ -8,3 +8,4 @@ On peut Offrir plusieurs médicament, qui peuvent être différents, comment fai
 - Puis multiplier le nombre de GrpBox composé de ComboBox Medicament et Quantité, par le nombre de sorte de médicament offert
 
   
+--Problème resolu par un Data Grid 
