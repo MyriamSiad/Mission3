@@ -61,12 +61,14 @@
             this.grpBoxDate = new System.Windows.Forms.GroupBox();
             this.dtgMedicament = new System.Windows.Forms.DataGridView();
             this.BdgSourceOffrir = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbxVisiteurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BdgNavRapport)).BeginInit();
             this.BdgNavRapport.SuspendLayout();
             this.grpBoxDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdgSourceOffrir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // datepicker
@@ -364,11 +366,21 @@
             // 
             this.BdgSourceOffrir.DataSource = typeof(Mission3.offrir);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 409);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 134);
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmModifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 544);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtgMedicament);
             this.Controls.Add(this.grpBoxDate);
             this.Controls.Add(this.cbxBilan);
@@ -395,6 +407,7 @@
             this.grpBoxDate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BdgSourceOffrir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +445,6 @@
         private System.Windows.Forms.ComboBox cbxBilan;
         private System.Windows.Forms.GroupBox grpBoxDate;
         private System.Windows.Forms.DataGridView dtgMedicament;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

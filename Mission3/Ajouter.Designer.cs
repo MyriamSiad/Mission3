@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lblAdresse));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,9 +53,11 @@
             this.cbxBilan = new System.Windows.Forms.ComboBox();
             this.dtgMedicament = new System.Windows.Forms.DataGridView();
             this.lblNbrMedicamament = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbMedecin.SuspendLayout();
             this.grbxVisiteurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -272,11 +275,21 @@
             this.lblNbrMedicamament.Text = "Nombre de medicament offert différents";
             this.lblNbrMedicamament.Click += new System.EventHandler(this.lblNbrMedicamament_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(452, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(228, 131);
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblAdresse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 490);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtgMedicament);
             this.Controls.Add(this.lblNbrMedicamament);
             this.Controls.Add(this.cbxBilan);
@@ -300,6 +313,7 @@
             this.grbxVisiteurs.ResumeLayout(false);
             this.grbxVisiteurs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +344,6 @@
         private System.Windows.Forms.ComboBox cbxBilan;
         private System.Windows.Forms.DataGridView dtgMedicament;
         private System.Windows.Forms.Label lblNbrMedicamament;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

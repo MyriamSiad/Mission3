@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualiser));
             this.btnGenererXml = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.cbxVisiteursPrenom = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbxVisiteursNom = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbxVisiteurs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGenererXml
@@ -113,11 +116,22 @@
             this.cbxVisiteursNom.TabIndex = 10;
             this.cbxVisiteursNom.SelectedIndexChanged += new System.EventHandler(this.cbxVisiteursNom_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-5, 314);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 134);
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // FrmVisualiser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grbxVisiteurs);
             this.Controls.Add(this.btnGenererXml);
             this.Controls.Add(this.dateTimePicker1);
@@ -127,6 +141,7 @@
             this.Load += new System.EventHandler(this.FrmVisualiser_Load);
             this.grbxVisiteurs.ResumeLayout(false);
             this.grbxVisiteurs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +156,6 @@
         private System.Windows.Forms.ComboBox cbxVisiteursPrenom;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxVisiteursNom;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

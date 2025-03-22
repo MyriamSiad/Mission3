@@ -232,6 +232,11 @@ namespace Mission3
                 MessageBox.Show("Veuillez remplir les informations  !!! ");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

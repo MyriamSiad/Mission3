@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|d:\\bts 2 ann\u00E9e\\semestre 1\\ap\\mission3\\mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|d:\\bts 2 ann\u00E9e\\semestre 1\\ap\\mission3\\mission3\\ajouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\ajouter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|d:\\bts 2 ann\u00E9e\\semestre 1\\ap\\mission3\\mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\mission3\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|d:\\bts 2 ann\u00E9e\\semestre 1\\ap\\mission3\\mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|d:\\bts 2 ann\u00E9e\\semestre 1\\ap\\mission3\\mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmmodifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{392B22D6-ACCA-4712-9458-F54D1A6C3521}|Mission3\\FrmMission3.csproj|solutionrelative:mission3\\frmvisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,32 +50,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmMenu.cs [Design]",
+              "DocumentMoniker": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmMenu.cs",
+              "RelativeDocumentMoniker": "Mission3\\FrmMenu.cs",
+              "ToolTip": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmMenu.cs [Design]",
+              "RelativeToolTip": "Mission3\\FrmMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T10:59:46.765Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Ajouter.cs [Design]",
+              "DocumentMoniker": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\Ajouter.cs",
+              "RelativeDocumentMoniker": "Mission3\\Ajouter.cs",
+              "ToolTip": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\Ajouter.cs [Design]",
+              "RelativeToolTip": "Mission3\\Ajouter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T10:59:24.698Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FrmVisualiser.cs",
               "DocumentMoniker": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmVisualiser.cs",
               "RelativeDocumentMoniker": "Mission3\\FrmVisualiser.cs",
               "ToolTip": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmVisualiser.cs",
               "RelativeToolTip": "Mission3\\FrmVisualiser.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA4wDAAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAANUAAAAAAAAAAADgv+0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T13:31:28.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T13:31:28.544Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "FrmVisualiser.cs [Design]",
               "DocumentMoniker": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmVisualiser.cs",
               "RelativeDocumentMoniker": "Mission3\\FrmVisualiser.cs",
               "ToolTip": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmVisualiser.cs [Design]",
               "RelativeToolTip": "Mission3\\FrmVisualiser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T13:31:14.502Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-02T13:31:14.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FrmModifier.cs",
               "DocumentMoniker": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmModifier.cs",
               "RelativeDocumentMoniker": "Mission3\\FrmModifier.cs",
@@ -75,8 +104,7 @@
               "RelativeToolTip": "Mission3\\FrmModifier.cs",
               "ViewState": "AgIAACEAAAAAAAAAAADwv7QAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T12:49:46.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T12:49:46.289Z"
             },
             {
               "$type": "Document",
@@ -87,8 +115,7 @@
               "ToolTip": "D:\\BTS 2 Ann\u00E9e\\Semestre 1\\AP\\Mission3\\Mission3\\FrmModifier.cs [Design]",
               "RelativeToolTip": "Mission3\\FrmModifier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T12:48:05.766Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-02T12:48:05.766Z"
             }
           ]
         }
