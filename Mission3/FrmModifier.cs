@@ -292,7 +292,7 @@ namespace Mission3
                     }
                     else
                     {
-                        MessageBox.Show("Visiteur non trouvé.");
+                        MessageBox.Show("Rapport  non trouvé.");
                     }
                 }
                 catch (Exception ex)
@@ -398,17 +398,20 @@ namespace Mission3
                 if (rapport != null)
                 {
                     // Traitement du rapport, suppression, etc.
-                    mesDonneesGSB.rapports.Remove(rapport);
-                    mesDonneesGSB.SaveChanges();
+                    
                     if (rapportBindingSource.Contains(currentItem))
                     {
-                        rapportBindingSource.Remove(currentItem);
+                        mesDonneesGSB.rapports.Remove(rapport);
+                        mesDonneesGSB.SaveChanges();
+                       // rapportBindingSource.Remove(currentItem);
                     }
                     this.Update();
 
-                  
+                    MessageBox.Show("Le rapport a été supprimé avec succès.");
                 }
-                MessageBox.Show("Le rapport a été supprimé avec succès.");
+               
+
+              
 
             }
             
